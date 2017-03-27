@@ -1,0 +1,46 @@
+@ko-theme-base: #34495e;
+@ko-theme-1: @ko-theme-base;
+@ko-theme-2: tint(@ko-theme-base, 25%);
+@ko-theme-3: tint(@ko-theme-base, 40%);
+@ko-theme-4: tint(@ko-theme-base, 75%);
+@ko-theme-5: tint(@ko-theme-base, 90%);
+
+.makeBorder(@color: @ko-theme-1) {
+  border: 1px solid @color;
+}
+
+.makeBackgroundTransition() {
+  transition: background-color linear .25s, color linear .15s;
+}
+
+.ko-theme--body {
+  background-color: @ko-theme-5;
+  color: @ko-theme-1;
+}
+
+.ko-theme--panel {
+  &:extend(.ko-theme--body);
+
+  .makeBorder(@ko-theme-1);
+
+  padding: @ko-size-m;
+}
+
+.ko-theme--button {
+  .makeBorder(@ko-theme-1);
+  background-color: @ko-theme-4;
+
+  &.ko--active {
+    .makeBackgroundTransition();
+
+    background-color: @ko-theme-3;
+    color: @ko-theme-5;
+  }
+
+  &:hover {
+    .makeBackgroundTransition();
+
+    background-color: @ko-theme-2;
+    color: @ko-theme-5;
+  }
+}

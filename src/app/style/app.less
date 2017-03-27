@@ -1,0 +1,67 @@
+@import "general";
+@import "variables";
+@import "util";
+@import "loader";
+
+#appContainer {
+  .ko--stretch();
+
+  display: flex;
+  flex-direction: column;
+}
+
+.ko-tabs__container {
+  position: relative;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: @ko-size-m @ko-size-m 0;
+
+  .ko-tabs__item {
+    flex: 1;
+    flex-direction: row;
+    height: @ko-size-xl;
+    padding: @ko-size-m @ko-size-l;
+    margin-right: @ko-size-m;
+    border-bottom: 0;
+
+    font-weight: bold;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .ko-tabs__container {
+    flex-direction: column;
+    margin: @ko-size-m @ko-size-m;
+
+    .ko-tabs__item {
+      margin: 0 0 @ko-size-m;
+      border-bottom: 1px solid @ko-theme-1;
+    }
+  }
+}
+
+.ko-tabs__content-container {
+  position: relative;
+  flex-grow: 1;
+  margin: 0 @ko-size-m @ko-size-m;
+
+  .ko-tabs__content-item {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+  }
+}
+
+

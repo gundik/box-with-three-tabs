@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="UTF-8">
+  <meta name="author" content="Konrad Osiecki">
+  <title>Box with 3 tabs</title>
+  <script src="dist/system.js"></script>
+</head>
+
+<body>
+  <div class="ko-loader">
+    <div class="ko-loader-inner">
+      <label></label>
+      <label></label>
+      <label></label>
+      <label></label>
+      <label></label>
+    </div>
+  </div>
+
+  <div id="appContainer">
+    <div class="ko-tabs__container">
+      <div class="ko-tabs__item ko-theme--button">Load locally stored file stats</div>
+      <div class="ko-tabs__item ko-theme--button">Show RSS feeds</div>
+      <div class="ko-tabs__item ko-theme--button">Present Flickr API Usage</div>
+    </div>
+    <div class="ko-tabs__content-container ko-theme--panel">
+      <div class="ko-tabs__content-item ko-app__file-info-loader"></div>
+      <div class="ko-tabs__content-item ko-app__rss-feeds"></div>
+      <div class="ko-tabs__content-item ko-app__flickr-api-presenter"></div>
+      <div class="ko-loader"></div>
+    </div>
+  </div>
+
+  <script>
+
+    System.config({
+      paths: {
+        "vendor": "/dist/vendor.js"
+      },
+      meta: {
+        "*.js": {
+          "scriptLoad": true,
+          "format": "amd"
+        }
+      }
+    });
+
+    System.import("app.min.js").catch(function (error) {
+      console.error(error.message)
+      console.error(error.stack)
+    });
+
+  </script>
+</body>
+</html>
