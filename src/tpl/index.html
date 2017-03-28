@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="author" content="Konrad Osiecki">
   <title>Box with 3 tabs</title>
-  <script src="dist/system.js"></script>
+  <script src="js/system.js"></script>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
 
     System.config({
       paths: {
-        "vendor": "/dist/vendor.js"
+        "vendor": "js/vendor.js"
       },
       meta: {
         "*.js": {
@@ -48,7 +48,7 @@
       }
     });
 
-    System.import("app.min.js").catch(function (error) {
+    System.import("js/app.min.js").catch(function (error) {
       console.error(error.message)
       console.error(error.stack)
     });

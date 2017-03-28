@@ -1,6 +1,15 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "eslint:recommended"],
+  "parser": "babel-eslint",
+  "plugins": [
+    "import",
+    "mocha"
+  ],
+  "env": {
+    "mocha": true
+  },
   "rules": {
+    "strict": 0,
     "no-multi-spaces": 0,
     "no-underscore-dangle": [0],
     "consistent-return": 0,
@@ -16,12 +25,15 @@
     "space-in-parens": 0,
     "key-spacing": 0,
     "no-unused-vars": [2, { "vars": "all", "args": "none" }],
-    "max-len": 1,
+    "max-len": [2, { "code": 120 }],
     "padded-blocks": 0,
     "no-console": 0,
     "no-continue": 0,
     "import/no-extraneous-dependencies": 0,
     "import/newline-after-import": 0,
+    "import/no-unresolved": [2, { "ignore": [ "vendor" ] }],
+    "import/prefer-default-export": 0,
+    "import/extensions": [2, { "js": "never" }],
     "no-mixed-operators": 0,
     "linebreak-style": 0
   }

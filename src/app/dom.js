@@ -1,22 +1,11 @@
-import {_, jquery} from 'vendor';
+import { jquery } from 'vendor';
 
-export default {
-  addClass,
-  attachEvent,
-  getElement,
-  getElements,
-  hide,
-  removeClass,
-  setHtmlContent,
-  show
+function getElements(selector: string, parentElement) {
+  return parentElement ? jquery.find(selector) : jquery(selector);
 }
 
 function getElement(selector: string, parentElement) {
   return getElements(selector, parentElement)[0];
-}
-
-function getElements(selector: string, parentElement) {
-  return parentElement ? jquery.find(selector) : jquery(selector);
 }
 
 function attachEvent(element, eventName, callback) {
@@ -42,3 +31,14 @@ function hide(element) {
 function setHtmlContent(element, content: string) {
   jquery(element).html(content);
 }
+
+export default {
+  addClass,
+  attachEvent,
+  getElement,
+  getElements,
+  hide,
+  removeClass,
+  setHtmlContent,
+  show
+};

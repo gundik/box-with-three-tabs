@@ -58,8 +58,10 @@ describe('Log File Parser Spec', () => {
       return `Assertion error for property ${propertyName} for entry: ${JSON.stringify(logFileEntry)}`
     }
     expect(logFileEntry).to.have.property('hostName').and.not.equal('', provideAssertionMessage('hostName'));
-    expect(logFileEntry).to.have.property('requestedFilePath').and.not.equal('', provideAssertionMessage('requestedFilePath'));
-    expect(logFileEntry).to.have.property('requestedFileName').and.not.equal('', provideAssertionMessage('requestedFileName'));
+    expect(logFileEntry).to.have.property('requestedFilePath')
+      .and.not.equal('', provideAssertionMessage('requestedFilePath'));
+    expect(logFileEntry).to.have.property('requestedFileName')
+      .and.not.equal('', provideAssertionMessage('requestedFileName'));
   }
 
 })

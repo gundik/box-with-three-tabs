@@ -18,7 +18,7 @@ const config = {
   },
   devtool: 'source-map',
   output: {
-    path: `${projectRoot}/dist`,
+    path: `${projectRoot}/dist/js`,
     filename: '[name].min.js',
     libraryTarget: 'umd',
     umdNamedDefine: true
@@ -51,7 +51,12 @@ const config = {
   postcss: function () {
     return [ autoprefixer ]
   },
-  plugins
+  plugins,
+
+  devServer: {
+    publicPath: "/js",
+    contentBase: path.resolve(__dirname, "../dist")
+  }
 };
 
 module.exports = config;

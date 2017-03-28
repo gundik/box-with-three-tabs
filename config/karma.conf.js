@@ -50,7 +50,7 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_DISABLE,
     coverageReporter: {
-      dir      : '../coverage',
+      dir      : './coverage',
       reporters: [
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' }

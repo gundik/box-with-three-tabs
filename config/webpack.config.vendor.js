@@ -11,7 +11,7 @@ const config = {
     vendor: './src/vendor/index.js'
   },
   output: {
-    path: 'dist',
+    path: 'dist/js',
     filename: '[name].js',
     libraryTarget: 'umd'
   },

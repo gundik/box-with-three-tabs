@@ -1,4 +1,4 @@
-import {_} from 'vendor';
+import { _ } from 'vendor';
 
 export class LogFileEntry {
 

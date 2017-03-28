@@ -1,4 +1,3 @@
-import { _ } from 'vendor';
 import { Module } from '../../Module';
 
 export default class RssFeedsModule extends Module {
