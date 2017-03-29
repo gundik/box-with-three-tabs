@@ -2,7 +2,7 @@ import { _ } from 'vendor';
 import './style/app.less';
 import dom from './apis/dom';
 import {FileInfoLoaderModule} from './modules/file-info-loader';
-import RssFeedsModule from './modules/rss-feeds';
+import {RssFeedsModule} from './modules/rss-feeds';
 import FlickrApiPresenterModule from './modules/flickr-api-presenter';
 
 const TAB_ACTIVE_CSS_CLASS_NAME = 'ko--active';
@@ -24,7 +24,9 @@ initModuleTab(1, 'fileInfoLoader');
 initModuleTab(2, 'rssFeeds');
 initModuleTab(3, 'flickrApiPresenter');
 
-loadModule(1, 'fileInfoLoader')();
+// TODO
+// loadModule(1, 'fileInfoLoader')();
+loadModule(2, 'rssFeeds')();
 
 function initModuleTab(tabNo, moduleKey) {
   const tabElement = dom.getElement(`.ko-tabs__item:nth-child(${tabNo})`, tabContainerElment);

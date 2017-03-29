@@ -1,4 +1,4 @@
-import dom from './apis/dom';
+import dom from './dom';
 
 export class Module {
 

@@ -1,4 +1,4 @@
-import { Module } from '../../Module';
+import { Module } from '../../apis/Module';
 
 export default class FlickrApiPresenterModule extends Module {
 

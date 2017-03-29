@@ -1,3 +1,5 @@
+@import "variables";
+
 @ko-theme-base: #34495e;
 @ko-theme-1: @ko-theme-base;
 @ko-theme-2: tint(@ko-theme-base, 25%);
@@ -19,12 +21,17 @@
   font-size: 14px;
 }
 
+.ko-module {
+  margin: @ko-size-m;
+}
+
 .ko-theme--panel {
   &:extend(.ko-theme--body);
 
   .makeBorder(@ko-theme-1);
 
   padding: @ko-size-m;
+  overflow: auto;
 }
 
 .ko-theme--button {
@@ -44,4 +51,48 @@
     background-color: @ko-theme-2;
     color: @ko-theme-5;
   }
+}
+
+.ko-table {
+  border-collapse: collapse;
+
+  thead {
+    tr {
+      border-bottom: 1px solid @ko-theme-1;
+    }
+
+    th {
+      height: @ko-size-xl;
+      background-color: @ko-theme-4;
+      border-width: 0;
+      border-right: 1px solid @ko-theme-5;
+      padding: 0 @ko-size-m;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid @ko-theme-4;
+    }
+
+    tr:last-child {
+      border-bottom-width: 0;
+    }
+
+    td {
+      padding: @ko-size-m;
+      overflow: visible;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+a:link,
+a:visited {
+  color: @ko-theme-2;
+}
+
+a:hover,
+a:active {
+  color: @ko-theme-1;
 }

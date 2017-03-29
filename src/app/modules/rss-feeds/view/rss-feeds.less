@@ -1,0 +1,59 @@
+@import "../../../style/theme";
+
+.ko-module__rss-feeds {
+
+  display: flex;
+  justify-content: center;
+
+  table {
+    max-width: 1200px;
+  }
+
+  .tableColumnsConfig() {
+    &:nth-child(1) {
+      min-width: 150px;
+      text-align: center;
+    }
+    &:nth-child(2) {
+      min-width: 200px;
+    }
+    &:nth-child(4) {
+      min-width: 100px;
+      text-align: center;
+    }
+  }
+
+  table th {
+    .tableColumnsConfig();
+  }
+
+  table td {
+    .tableColumnsConfig();
+
+    vertical-align: top;
+  }
+
+  @media screen and (max-width: 760px) {
+    table th,
+    table td {
+      &:nth-child(1) {
+        width: 90px;
+        min-width: inherit;
+      }
+
+      &:nth-child(2) {
+        width: auto;
+        min-width: inherit;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4) {
+        min-width: 0;
+        max-width: 0;
+        width: 0;
+        display: none;
+      }
+    }
+  }
+
+}

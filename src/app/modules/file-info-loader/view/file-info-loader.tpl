@@ -1,4 +1,4 @@
-<div class="ko-module__file-info-loader ko--stretch">
+<div class="ko-module ko-module__file-info-loader ko--stretch">
   {{#unless  isError}}
   <div>
     <h4>Five hosts with the most traffic:</h4>

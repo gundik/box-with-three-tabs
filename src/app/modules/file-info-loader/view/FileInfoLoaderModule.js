@@ -1,5 +1,5 @@
 import {_} from 'vendor';
-import {Module} from '../../../Module';
+import {Module} from '../../../apis/Module';
 import ajax from '../../../apis/ajax';
 import LogFileParser from '../model/LogFileParser';
 import FileInfoLoaderModel from '../model/FileInfoLoaderModel';

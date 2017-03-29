@@ -1,9 +1,1 @@
-import { Module } from '../../Module';
-
-export default class RssFeedsModule extends Module {
-
-  load() {
-    this.$element.innerHTML = 'RssFeedsModule: to be implemented';
-  }
-
-}
+export {default as RssFeedsModule} from './view/RssFedsModule';
