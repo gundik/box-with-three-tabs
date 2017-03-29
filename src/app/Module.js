@@ -1,4 +1,4 @@
-import dom from './dom';
+import dom from './apis/dom';
 
 export class Module {
 
@@ -20,6 +20,11 @@ export class Module {
 
   renderContent(content: string) {
     dom.setHtmlContent(this.$element, content);
+  }
+
+  render(templateFunction, context) {
+    let content = templateFunction(context);
+    this.renderContent(content);
   }
 
 }

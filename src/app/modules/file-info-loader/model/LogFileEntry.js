@@ -1,6 +1,6 @@
 import { _ } from 'vendor';
 
-export class LogFileEntry {
+export default class LogFileEntry {
 
   constructor(hostName = '', requestedFilePath = '') {
     this.hostName = hostName;

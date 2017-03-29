@@ -21,7 +21,8 @@
     "eslint": "eslint src --ext .js",
     "eslint:fix": "eslint src .js --fix",
     "eslint:test": "eslint test --ext .js",
-    "serve-app": "webpack-dev-server --progress --color --watch --config ./config/webpack.config.js"
+    "serve-app": "webpack-dev-server --progress --color --watch --config ./config/webpack.config.js",
+    "serve-assets": "webpack-dev-server --progress --color --watch --config ./config/webpack.config.assets.js"
   },
   "devDependencies": {
     "autoprefixer": "6.3.6",
@@ -41,6 +42,8 @@
     "eslint-loader": "1.5.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-mocha": "^4.7.0",
+    "handlebars": "^4.0.6",
+    "handlebars-loader": "^1.4.0",
     "imports-loader": "0.6.3",
     "isparta": "^4.0.0",
     "isparta-loader": "^2.0.0",

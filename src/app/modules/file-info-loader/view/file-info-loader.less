@@ -1,0 +1,67 @@
+@import "../../../style/variables";
+
+.ko-module__file-info-loader {
+
+  margin: @ko-size-m;
+  display: flex;
+  justify-content: space-around;
+  overflow: auto;
+
+  > * {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(1) {
+      min-width: 250px;
+      width: 20%;
+    }
+
+    &:nth-child(2) {
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    flex-direction: column;
+    align-content: space-between;
+    align-items: center;
+  }
+
+  .item {
+    display: flex;
+    margin: @ko-size-s 0;
+  }
+
+  .item_label {
+    display: inline-block;
+    font-weight: bold;
+    overflow: visible;
+    text-overflow: ellipsis;
+  }
+
+  .item_label--bar {
+    flex: 1;
+  }
+
+  .item_count {
+    display: inline-block;
+    margin: 0 auto 0 @ko-size-s;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .item_count--bar {
+    flex: 1;
+    margin: 0 @ko-size-l;
+    border: 1px solid @ko-theme-2;
+    text-align: center;
+  }
+
+  .error {
+    align-self: center;
+    width: auto;
+    font-weight: bold;
+  }
+
+}

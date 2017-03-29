@@ -36,8 +36,12 @@ const config = {
         loader: 'style-loader!css-loader!postcss-loader!less-loader'
       },
       {
-        test: /\.log$/,
+        test: /\.(log)$/,
         loader: "raw-loader"
+      },
+      {
+        test: /\.tpl/,
+        loader: "handlebars-loader"
       }
     ]
   },

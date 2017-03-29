@@ -1,10 +1,10 @@
 import { _ } from 'vendor';
-import { LogFileEntry } from './LogFileEntry';
+import LogFileEntry from './LogFileEntry';
 
 const HOSTS_WITH_MOST_TRAFFIC_EXTRACT_COUNT = 5;
 const MOST_REQUESTED_FILES_EXTRACT_COUNT = 5;
 
-export class FileInfoLoaderModel {
+export default class FileInfoLoaderModel {
 
   static createFromResult(resultSet: Array<LogFileEntry>) {
     const hostsWithMostTraffic = extractHostsWithMostTraffic(resultSet);

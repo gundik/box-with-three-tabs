@@ -1,9 +1,9 @@
 import { _, urlParse } from 'vendor';
-import { LogFileEntry } from './LogFileEntry';
+import LogFileEntry from './LogFileEntry';
 
 const URL_REGEX_STRING = 'https?:\/\/\\S+';
 
-export class LogFileParser {
+export default class LogFileParser {
 
   static parse(content: string): Array<LogFileEntry> {
     return _(content.trim())

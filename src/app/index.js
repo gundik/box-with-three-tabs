@@ -1,7 +1,7 @@
 import { _ } from 'vendor';
 import './style/app.less';
-import dom from './dom';
-import FileInfoLoaderModule from './modules/file-info-loader';
+import dom from './apis/dom';
+import {FileInfoLoaderModule} from './modules/file-info-loader';
 import RssFeedsModule from './modules/rss-feeds';
 import FlickrApiPresenterModule from './modules/flickr-api-presenter';
 
