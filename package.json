@@ -15,7 +15,7 @@
     "dev": "npm run-script template && npm run-script systemjs && npm run-script vendor && npm run-script serve-app",
     "clean": "cleandir ./dist",
     "template": "copyfiles -f ./src/tpl/index.html dist",
-    "systemjs": "copyfiles -f ./node_modules/systemjs/dist/system.js dist/js",
+    "systemjs": "copyfiles -f ./node_modules/systemjs/dist/system.js dist/js && copyfiles -f ./node_modules/systemjs/dist/system-polyfills.js dist/js",
     "test": "karma start ./config/karma.conf.js --single-run",
     "cover": "open coverage/lcov-report/index.html",
     "eslint": "eslint src --ext .js",

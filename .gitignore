@@ -3,5 +3,6 @@ coverage
 lib
 dist
 *.log
+!assets/*.log
 .DS_Store
 *.iml

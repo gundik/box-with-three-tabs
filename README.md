@@ -13,7 +13,9 @@ The app consists of:
 - locally stored Verilog file provided by a separate server 
 
 All JavaScript files are build using Webpack. The build process can be carried out using <i>npm scripts</i> (see `package.json` file and description below).
-The html build is done in runtime using precompiled Handlebars templates. 
+The html build is done in runtime using precompiled Handlebars templates.
+
+Simple data caching is provided to reduce traffic and speed-up app working. The caching time is 1 minute.
 
 ## Repository content
 
