@@ -2,17 +2,17 @@
 
 This is a simple web application providing three main functionalities:
 
-0. providing data read from a locally stored log file (Verilog file), parsing it and presenting some sample data
-0. serving data from three RSS feeds ordered by date of publication (newest first)
-0. showing some photographs taken from Flickr using Flickr API
+1. providing data read from a locally stored log file (Verilog file), parsing it and presenting some sample data
+1. serving data from three RSS feeds ordered by date of publication (newest first)
+1. showing some photographs taken from Flickr using Flickr API
 
 The app consists of:
-- the main `dist/index.html` file
+- the main `index.html` file
 - `vendor.js` file with all tools/utility JavaScript libraries (jQeury, MomentJS, Lodash, url-parse library) used by the app
-- dependency to `systemjs` library which helps to run the app combined with the vendor libs
+- `systemjs` dependency library which helps to run the app combined with the vendor libs
 - locally stored Verilog file provided by a separate server 
 
-All JavaScript files are build using Webpack. The build process can be carried out using npm scripts (see `package.json` file and description below).
+All JavaScript files are build using Webpack. The build process can be carried out using <i>npm scripts</i> (see `package.json` file and description below).
 The html build is done in runtime using precompiled Handlebars templates. 
 
 ## Repository content
@@ -23,9 +23,11 @@ The project is stored in GitHub and contains:
 
 ## Usage
 
-One can use the app simply by running the `dist/index.html` in the web browser.
+One can use the app simply by running the `dist/index.html` in a web browser.
+
 Another way for getting the app run is by using the Dev Server.
 In order to use all functionalities one has to run another server (some kind of Proxy Server) which provides necessary data and services.
+
 Instructions for running both the Proxy Server and the Dev Sever are provided below.
 
 ## On-line view
