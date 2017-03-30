@@ -11,7 +11,7 @@ export default class AtomFormatParser extends RssFeedParser {
     return items;
   }
 
-  parseItem(item: object): RssFeedEntryModel {
+  parseItem(item: Object): RssFeedEntryModel {
     item = jquery(item);
     let title = extractTextFromElement(item, 'title');
     let date = extractTextFromElement(item, 'updated');

@@ -25,9 +25,7 @@ initModuleTab(1, 'fileInfoLoader');
 initModuleTab(2, 'rssFeeds');
 initModuleTab(3, 'flickrApiPresenter');
 
-// TODO
-// loadModule(1, 'fileInfoLoader')();
-loadModule(2, 'rssFeeds')();
+loadModule(1, 'fileInfoLoader')();
 
 function initModuleTab(tabNo, moduleKey) {
   const tabElement = dom.getElement(`.ko-tabs__item:nth-child(${tabNo})`, tabContainerElment);

@@ -1,1 +1,1 @@
-export {default as RssFeedsModule} from './view/RssFedsModule';
+export {default as RssFeedsModule} from './view/RssFeedsModule';

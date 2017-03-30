@@ -9,7 +9,8 @@ import templateFunction from './rss-feeds.tpl';
 import './rss-feeds.less';
 
 const RSS_FEED_SOURCES = [
-  new RssFeedSource('vg.no', 'http://www.vg.no/rss/feed/?categories=1068,1069,1070&keywords=&limit=25&format=rss', RssFormatParser),
+  new RssFeedSource('vg.no',
+    'http://www.vg.no/rss/feed/?categories=1068,1069,1070&keywords=&limit=25&format=rss', RssFormatParser),
   new RssFeedSource('ArsTechnica', 'http://feeds.arstechnica.com/arstechnica/index?format=xml', RssFormatParser),
   new RssFeedSource('TheRegister', 'http://www.theregister.co.uk/headlines.atom', AtomFormatParser)
 ];

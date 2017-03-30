@@ -1,7 +1,8 @@
 import _ from 'lodash';
 import fileContent from './assets/varnish.log';
 import {expect} from '../../testHelper';
-import {LogFileParser, extractFirstUrlFromString} from '../../../src/app/modules/file-info-loader/model/LogFileParser';
+import {default as LogFileParser, extractFirstUrlFromString}
+  from '../../../src/app/modules/file-info-loader/model/LogFileParser';
 import {LogFileEntry} from '../../../src/app/modules/file-info-loader/model/LogFileEntry';
 
 const fileContentFirstLine = fileContent.substring(0, 217).trim();

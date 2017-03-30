@@ -1,6 +1,6 @@
 import {expect} from '../../testHelper';
-import {FileInfoLoaderModel} from '../../../src/app/modules/file-info-loader/model/FileInfoLoaderModel';
-import {LogFileEntry} from '../../../src/app/modules/file-info-loader/model/LogFileEntry';
+import FileInfoLoaderModel from '../../../src/app/modules/file-info-loader/model/FileInfoLoaderModel';
+import LogFileEntry from '../../../src/app/modules/file-info-loader/model/LogFileEntry';
 
 var resultSet = [
   new LogFileEntry('a', '/a/b/c'),

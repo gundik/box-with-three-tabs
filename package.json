@@ -1,8 +1,8 @@
 {
   "name": "box-with-3-tabs",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/box-with-3-tabs.min.js",
+  "description": "Simple Webpack-based project presenting three functionalities: 1) loading and parsing a localy stored file, 2) reading and parsing three rss feeds, 3) usage of Flickr API",
+  "main": "dist/app.min.js",
   "author": {
     "name": "Konrad Osiecki",
     "email": "konrad.osiecki@gmail.com"
@@ -33,6 +33,7 @@
     "babel-preset-es2015": "6.16.0",
     "babel-preset-es2016": "^6.22.0",
     "babel-preset-flow": "^6.23.0",
+    "babel-runtime": "^6.23.0",
     "chai": "^3.5.0",
     "clean-dir": "^1.0.3",
     "copyfiles": "^1.2.0",
@@ -66,7 +67,6 @@
     "moment": "^2.18.1",
     "phantomjs-prebuilt": "^2.1.3",
     "postcss-loader": "0.9.1",
-    "pre-commit": "^1.1.3",
     "raw-loader": "0.5.1",
     "sinon": "^2.1.0",
     "sinon-chai": "^2.9.0",
@@ -78,5 +78,13 @@
     "webpack-merge": "^0.14.1",
     "yargs": "6.0.0"
   },
-  "repository": ""
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gundik/box-with-three-tabs"
+  },
+  "private": true,
+  "files": [
+    "dist",
+    "LICENSE"
+  ]
 }
