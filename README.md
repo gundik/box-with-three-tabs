@@ -68,23 +68,25 @@ $ npm dev
 
 ### NPM Scripts
 
-`build` - triggers the full app rebuild (with needed resources and vendor files build) and outputs it into `dist/` directory; the app is than ready to run by opening the `dist/index.html` file in the browser 
-`app` - builds only the app files
-`vendor` - builds the `vendor.js` file containing app JavaScript dependency libs
-`dev` - build all resources and run Webpack Dev Server
-`clean` - clean the `dist/` directory
-`template` - copies `index.html` file/template to `dist/`
-`systemjs` - copies `system.js` library file to `dist/`
-`test` - runs unit tests
-`eslint` - runs EsLint code verification tool on app source files
-`eslint:fix` - runs EsLint with `--fix` option
-`eslint:test` - runs EsLint tool on test source files
-`serve-app` - starts the app's Webpack Dev Server
-`serve-proxy` - starts the Proxy Server (also a Webpack Dev Server with separate configuration)
+- `build` - triggers the full app rebuild (with needed resources and vendor files build) and outputs it into `dist/` directory; the app is than ready to run by opening the `dist/index.html` file in the browser 
+- `app` - builds only the app files
+- `vendor` - builds the `vendor.js` file containing app JavaScript dependency libs
+- `dev` - build all resources and run Webpack Dev Server
+- `clean` - clean the `dist/` directory
+- `template` - copies `index.html` file/template to `dist/`
+- `systemjs` - copies `system.js` library file to `dist/`
+- `test` - runs unit tests
+- `eslint` - runs EsLint code verification tool on app source files
+- `eslint:fix` - runs EsLint with `--fix` option
+- `eslint:test` - runs EsLint tool on test source files
+- `serve-app` - starts the app's Webpack Dev Server
+- `serve-proxy` - starts the Proxy Server (also a Webpack Dev Server with separate configuration)
 
 ## TODO:
 
 - functionality of 3rd part of the assignment
 - provide tests for parsing utility, html template providers, resource retrieving functionalities
 - refactor and prettify the `index.js` file
+- provide API for xml parsing (like DOM api) instead of direct jQuery usage in modules
+- remove jQuery usage from DOM api (it actually not necessary there)
 
