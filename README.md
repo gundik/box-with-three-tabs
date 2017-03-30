@@ -98,4 +98,5 @@ The server will available at  `http://localhost:8080/webpack-dev-server/index.ht
 - provide API for xml parsing (like DOM api) instead of direct jQuery usage in modules
 - remove jQuery usage from DOM api (it actually not necessary there)
 - provide loader at app start (so that the content does not blink on app start)
+- provide LESS mixins for media queries
 
