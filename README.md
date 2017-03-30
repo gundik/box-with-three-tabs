@@ -2,7 +2,7 @@
 
 This is a simple web application providing three main functionalities:
 
-1. providing data read from a locally stored log file (Verilog file), parsing it and presenting some sample data
+1. providing data read from a locally stored log file (Varnish file), parsing it and presenting some sample data
 1. serving data from three RSS feeds ordered by date of publication (newest first)
 1. showing some photographs taken from Flickr using Flickr API
 
@@ -10,7 +10,7 @@ The app consists of:
 - the main `index.html` file
 - `vendor.js` file with all tools/utility JavaScript libraries (jQeury, MomentJS, Lodash, url-parse library) used by the app
 - `systemjs` dependency library which helps to run the app combined with the vendor libs
-- locally stored Verilog file provided by a separate server 
+- locally stored Varnish file provided by a separate server 
 
 All JavaScript files are build using Webpack. The build process can be carried out using <i>npm scripts</i> (see `package.json` file and description below).
 The html build is done in runtime using precompiled Handlebars templates.
@@ -43,7 +43,7 @@ Instructions for running both the Proxy Server and the Dev Sever are provided be
 
 ### Serving files and RSS feeds (Proxy Server)
 
-In order to run the Proxy Server which serves data and services needed by the app for getting the `verilog.log` file and RSS feeds
+In order to run the Proxy Server which serves data and services needed by the app for getting the `varnish.log` file and RSS feeds
 one has to run following instructions in the CLI:
 
 ```
