@@ -22,7 +22,7 @@ export default class RssFeedsModule extends Module {
     this.model = new RssFeedsModel(RSS_FEED_SOURCES);
   }
 
-  load() {
+  loadModule() {
     this.model.clear();
     _.each(this.model.feedSources, (feedSource) => {
       this.loadRssData(feedSource);
@@ -54,9 +54,14 @@ export default class RssFeedsModule extends Module {
 
   renderRssDataWhenReady() {
     if (this.model.isReady()) {
-      let renderModel = this.prepareModelForRender();
-      this.render(templateFunction, renderModel);
+      this.renderModule();
     }
+  }
+
+  renderModule() {
+    let renderModel = this.prepareModelForRender();
+    this.render(templateFunction, renderModel);
+    this.loaded();
   }
 
   prepareModelForRender() {

@@ -1,4 +1,4 @@
-import { _ } from 'vendor';
+import {_} from 'vendor';
 import LogFileEntry from './LogFileEntry';
 
 const HOSTS_WITH_MOST_TRAFFIC_EXTRACT_COUNT = 5;
@@ -16,6 +16,7 @@ export default class FileInfoLoaderModel {
               mostRequestedFiles: Array<FileInfoLoaderItemModel>) {
     this.hostsWithMostTraffic = hostsWithMostTraffic;
     this.mostRequestedFiles = mostRequestedFiles;
+    this.isError = false;
   }
 
 }
@@ -32,7 +33,7 @@ export class FileInfoLoaderItemModel {
 function extractHostsWithMostTraffic(resultSet: Array<LogFileEntry>) {
   return _(resultSet)
     .countBy('hostName')
-    .map((value, key) => ({ value: key, count: value }))
+    .map((value, key) => ({value: key, count: value}))
     .orderBy(['count'], ['desc'])
     .slice(0, HOSTS_WITH_MOST_TRAFFIC_EXTRACT_COUNT)
     .map(item => new FileInfoLoaderItemModel(item.value, item.count))
@@ -43,7 +44,7 @@ function extractMostRequestedFiles(resultSet: Array<LogFileEntry>) {
   return _(resultSet)
     .filter(item => item.isResourceRequest())
     .countBy('requestedFilePath')
-    .map((value, key) => ({ value: key, count: value }))
+    .map((value, key) => ({value: key, count: value}))
     .orderBy(['count'], ['desc'])
     .slice(0, MOST_REQUESTED_FILES_EXTRACT_COUNT)
     .map(item => new FileInfoLoaderItemModel(item.value, item.count))

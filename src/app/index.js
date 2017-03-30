@@ -7,6 +7,7 @@ import FlickrApiPresenterModule from './modules/flickr-api-presenter';
 
 const TAB_ACTIVE_CSS_CLASS_NAME = 'ko--active';
 
+const loaderElement = dom.getElement('#loader');
 const tabContainerElment = dom.getElements('#appContainer .ko-tabs__container');
 
 const fileInfoLoaderElement = dom.getElement('#appContainer .ko-tabs__content-container .ko-app__file-info-loader');
@@ -35,6 +36,8 @@ function initModuleTab(tabNo, moduleKey) {
 
 function loadModule(tabNo, moduleKey) {
   return () => {
+    dom.show(loaderElement);
+
     _.forEach(dom.getElements('.ko-tabs__item', tabContainerElment), (element) => {
       dom.removeClass(element, TAB_ACTIVE_CSS_CLASS_NAME);
     });
@@ -45,7 +48,9 @@ function loadModule(tabNo, moduleKey) {
     const module = modules[moduleKey];
     dom.addClass(dom.getElements(`.ko-tabs__item:nth-child(${tabNo})`, tabContainerElment), TAB_ACTIVE_CSS_CLASS_NAME);
     dom.show(module.getElement());
-    module.load();
+
+    module.load()
+      .then(() => dom.hide(loaderElement));
   };
 }
 

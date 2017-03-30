@@ -10,16 +10,6 @@
 </head>
 
 <body>
-  <div class="ko-loader">
-    <div class="ko-loader-inner">
-      <label></label>
-      <label></label>
-      <label></label>
-      <label></label>
-      <label></label>
-    </div>
-  </div>
-
   <div id="appContainer">
     <div class="ko-tabs__container">
       <div class="ko-tabs__item ko-theme--button">Load locally stored file stats</div>
@@ -30,7 +20,16 @@
       <div class="ko-tabs__content-item ko--stretch ko-app__file-info-loader"></div>
       <div class="ko-tabs__content-item ko--stretch ko-app__rss-feeds"></div>
       <div class="ko-tabs__content-item ko--stretch ko-app__flickr-api-presenter"></div>
-      <div class="ko-loader"></div>
+
+      <div id="loader" class="ko-loader">
+        <div class="ko-loader-inner">
+          <label></label>
+          <label></label>
+          <label></label>
+          <label></label>
+          <label></label>
+        </div>
+      </div>
     </div>
   </div>
 

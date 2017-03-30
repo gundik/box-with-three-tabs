@@ -1,9 +1,15 @@
+import {_} from 'vendor';
 import dom from './dom';
+
+// used for very simple caching mechanism
+const CACHE_TIME_INTERVAL_MILLIS = 1 * 60 * 1000; // 1 minute
 
 export class Module {
 
   constructor(element) {
+    this.$moduleLoaderPromiseResolveFunction = null;
     this.$element = element;
+    this.$lastDataReadTime = null;
   }
 
   getElement() {
@@ -11,11 +17,42 @@ export class Module {
   }
 
   load() {
-    throw new Error('load() should be implemented in child class');
+    let self = this;
+    return new Promise(function(resolve) {
+      self.$moduleLoaderPromiseResolveFunction = resolve;
+      self.unloadModule();
+      self.loadModuleIfRequired();
+    });
   }
 
-  unload() {
+  loadModuleIfRequired() {
+    let now = _.now();
+    let isDataInvalid = this.$lastDataReadTime == null || (this.$lastDataReadTime + CACHE_TIME_INTERVAL_MILLIS) < now;
+    if (isDataInvalid) {
+      this.$lastDataReadTime = now;
+      this.loadModule();
+    } else {
+      this.renderModule();
+      this.loaded();
+    }
+  }
 
+  loadModule() {
+    throw new Error('loadModule() should be implemented in child class');
+  }
+
+  loaded() {
+    if (_.isFunction(this.$moduleLoaderPromiseResolveFunction)) {
+      this.$moduleLoaderPromiseResolveFunction();
+    }
+  }
+
+  unloadModule() {
+    dom.setHtmlContent(this.$element, '');
+  }
+
+  renderModule() {
+    throw new Error('load() should be implemented in child class');
   }
 
   renderContent(content: string) {

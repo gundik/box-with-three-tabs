@@ -13,16 +13,23 @@ export default class FileInfoLoaderModule extends Module {
   constructor(element) {
     super(element);
     _.bindAll(this, ['parseFile', 'showError', 'renderParsedData']);
+    this.initEmptyModel();
   }
 
-  load() {
+  initEmptyModel() {
+    this.model = new FileInfoLoaderModel();
+  }
+
+  loadModule() {
     this.loadFileData();
   }
 
   loadFileData() {
+    this.initEmptyModel();
+
     ajax.get({
       url: FILE_URL,
-      contentType : 'text/plain',
+      contentType: 'text/plain',
       crossDomain: true
     })
       .then(this.parseFile)
@@ -31,11 +38,12 @@ export default class FileInfoLoaderModule extends Module {
   }
 
   parseFile(data) {
+    let self = this;
     return new Promise(function(resolve, reject) {
       try {
         let logFileEntries = LogFileParser.parse(data);
-        let model = FileInfoLoaderModel.createFromResult(logFileEntries);
-        resolve(model);
+        self.model = FileInfoLoaderModel.createFromResult(logFileEntries);
+        resolve();
       } catch (e) {
         let errorMessage = e ? e.message : '';
         reject(errorMessage);
@@ -44,11 +52,17 @@ export default class FileInfoLoaderModule extends Module {
   }
 
   showError() {
-    this.render(templateFunction, {isError: true});
+    this.model.isError = true;
+    this.renderModule();
   }
 
-  renderParsedData(model: FileInfoLoaderModel) {
-    this.render(templateFunction, model);
+  renderParsedData() {
+    this.renderModule();
+  }
+
+  renderModule() {
+    this.render(templateFunction, this.model);
+    this.loaded();
   }
 
 }
