@@ -23,25 +23,29 @@ The project is stored in GitHub and contains:
 
 ## Usage
 
-One can use the app simply by running the `dist/index.html` in a web browser.
+Just...
 
-Another way for getting the app run is by using the Dev Server.
+```
+# install dependencies
+$ npm install
+
+# run the Proxy Server
+$ npm run build
+```
+
+Then run the `dist/index.html` in a web browser.
 In order to use all functionalities one has to run another server (some kind of Proxy Server) which provides necessary data and services.
 
+Another way for getting the app run is by using the Dev Server.
 Instructions for running both the Proxy Server and the Dev Sever are provided below.
 
-## On-line view
-
-<i>optional</i>
-The app may be also available at [my website](http://demo.kodzix.pl).
-
-### Serving files and RSS feeds
+### Serving files and RSS feeds (Proxy Server)
 
 In order to run the Proxy Server which serves data and services needed by the app for getting the `verilog.log` file and RSS feeds
 one has to run following instructions in the CLI:
 
 ```
-# install dependencies
+# install dependencies (if not already done)
 $ npm install
 
 # run the Proxy Server
@@ -68,6 +72,8 @@ $ npm run test
 $ npm dev
 ```
 
+The server will available at  `http://localhost:8080/webpack-dev-server/index.html` (no port availability check is performed).
+
 ### NPM Scripts
 
 - `build` - triggers the full app rebuild (with needed resources and vendor files build) and outputs it into `dist/` directory; the app is than ready to run by opening the `dist/index.html` file in the browser 
@@ -91,4 +97,5 @@ $ npm dev
 - refactor and prettify the `index.js` file
 - provide API for xml parsing (like DOM api) instead of direct jQuery usage in modules
 - remove jQuery usage from DOM api (it actually not necessary there)
+- provide loader at app start (so that the content does not blink on app start)
 
