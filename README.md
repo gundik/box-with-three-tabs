@@ -56,6 +56,11 @@ $ npm run serve-proxy
 
 The server will available at  `http://localhost:9090` (no port availability check is performed).
 
+## On-line view
+
+<i>optional</i>
+The app may be also available at <a href="http://demo.kodzix.pl" title="Box With 3 Tabs Demo" target="_blank">my website</a>.
+
 ## Development 
 
 ### Development Setup
